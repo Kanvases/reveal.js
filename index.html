@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Media Propagation in Online Social Networks</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css">
@@ -24,8 +24,207 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+					<section>
+						<p>18.3</p>
+						<h2>Media Propagation in Online Social Networks</h2> 
+						<h3>在社交平台，媒体是如何传播的？</h3>
+					</section>
+					<section>
+						<ul>
+							<li>FaceBook,Twitter等社交媒体的传播速度比传统新闻网站快得多</li>
+							<li>视频是社交媒体传播信息的重要载体</li>
+							<li>因为视频体积较大，通常使用URL传播。使用短连接，视频传播得更广</li>
+							<li>文本和图片能通过一些手段得到个人信息，但视频更加“公众”，</li>
+							<li>针对视频的特性，研究社交网络的服务和传播模型</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<p>18.3.1</p>
+						<h2> Sharing Patterns of Individual Users</h1> 
+						<p>单个用户的分享模式</p>
+					</section>
+					<section>
+						<p>
+							视频分享在社交网站和视频网站
+						</p>
+						<p>
+							<h4>研究的问题：</h4>
+							<ul>
+							<li>用户多久发一次原创视频？ </li>
+							<li>用户多久转发一次视频？</li>
+							</ul>
+						</p>
+					</section>
+					<section>
+							<p>
+								<h4>数据集：</h4>
+								<table>
+									<thead>
+									<tr>
+										<td>种类</td>
+										<td>原创</td>
+										<td>分享</td>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+										<th>一周视频量</th>
+										<th>1280万</th>
+										<th>1亿1500万</th>
+										</tr>					
+									</tbody>
+								</table>
+							</p>
+							<p>
+								选取其中6.5%的数据，共82.7万条视频
+							</p>
+					</section>
+					<section>
+							<img data-src="./imgs/f1.png">
+					</section>
+					
+					<section>
+						<h4>配图说明：</h4>
+						<ul>
+							<li>左图是原创视频统计，右图是转发视频统计</li>
+							<li>Zipf定律：在自然语料库中，频率排名为N的单词，其频率f是排名N-1的单词频率的一半。</li>
+							<li>无论转发还是原创，在前90%的位置有一个陡降。</li>
+						</ul>
+						
+					</section>
+
+				
+					<section>
+						<h4>原创视频统计：</h4>
+						<ul>
+							<li>近99%的用户发几个原创，甚至一点不发</li>
+							<li>一些活跃的用户有很多网上的朋友，发很多原创视频，在网络中像是一个站，有分发聚集的作用。</li>
+						</ul>
+						<h4>转发视频统计：</h4>
+						<ul>
+							<li>一些极端活跃的用户分享大量的视频</li>
+							<li>大多数用户分享一些视频，数量不多</li>
+							<li>也有一些用户，看了一千多个视频也不分享</li>
+						</ul>
+				</section>
+				<section>
+					根据用户的习惯，我们把用户分为三类:
+					<ul>
+						<li>Spreaders: 网红，原创者、bot、收集者</li>
+						<li>Free-riders: 潜水的人，明显阻碍视频传播</li>
+						<li>Ordinary users: 普通网友</li>
+					</ul>
+				</section>
+			</section>
+			<section>
+				<section>
+					<p>18.3.2</p>
+					<h2>Video Propagation Structures and Model</h1> 
+					<p>视频传播的模型</p>
+				</section> 
+				<section>
+					深度传播模型中每个分支基本上都是由视频创作者发出的。分支少，但深度大。
+					<img src="./imgs/f2.png">
+				</section>
+				<section>
+					广度传播模型的分支很多，深度大小不一。
+					<img src="./imgs/f3.png">
+				</section>
+				<section>
+						<table>
+								<thead>
+									<tr>
+										<th>大小</th>
+										<th>传播深度</th>
+										<th>浏览人数</th>
+										<th>长度(s)</th>
+										<th>类别</th>
+										<th>描述</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>1093</td>
+										<td>9</td>
+										<td>34,531</td>
+										<td>123</td>
+										<td>新闻</td>
+										<td>父亲用直升机接女儿放学</td>
+									</tr>
+									<tr>
+										<td>951</td>
+										<td>8</td>
+										<td>14,281</td>
+										<td>60</td>
+										<td>广告</td>
+										<td>地球一小时活动</td>
+									</tr>
+									<tr>
+										<td>805</td>
+										<td>30</td>
+										<td>12,658</td>
+										<td>306</td>
+										<td>音乐</td>
+										<td>中国明星唱的公益单曲《孩子》</td>
+									</tr>
+									<tr>
+										<td>126</td>
+										<td>23</td>
+										<td>4,431</td>
+										<td>235</td>
+										<td>搞笑</td>
+										<td>有趣的配音视频</td>
+									</tr>
+								</tbody>
+							</table>
+				</section>
+				<section>
+					<p>
+						<h4>视频传播的模型：传染病模型</h4>
+						<ul>
+							<li>基本的传染病模型：病人数$\times$感染概率>1 </li>
+							
+						</ul>
+					</p>
+					
+					
+				</section>
+				<section>
+						<p>
+								<h4>SIR传染病模型</h4>
+								<ul>
+									SIR模型固定的参数：
+									<li>Susceptible: 易感染人群，在线且未看过视频的人</li>
+									<li>Infectious: 有感染能力的人群，正在看视频的人</li>
+									<li>Recovered: 已恢复的人群，看完没分享的人</li>
+									以下是作者自己增加的参数：
+									<li>Immune: 免疫人群，收到了分享但没看的人</li>
+									<li>Permanent：永久患病人群，看完视频后分享的人</li>
+								</ul>
+							</p>
+							<p>
+								$
+								\frac{dS}{dt}=-\beta SI,
+								$
+								&nbsp
+								$
+								\frac{dI}{dt}=\beta SI-\gamma I,
+								$
+								&nbsp
+								$
+								\frac{dR}{dt}=\gamma I.
+								$
+							</p>
+				</section>
+				<section>
+					<h5>Susceptible-Immune-Infectious-Recovered-Permanent (SI2RP) </h5>
+					<img src="./imgs/f4.png">
+
+				</section>
+			</section> 
 			</div>
 		</div>
 
@@ -41,8 +240,9 @@
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
 					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); }},
+					{src: 'plugin/math/math.js',async: true}
+					]
 			});
 		</script>
 	</body>
